@@ -15,9 +15,6 @@ class Evaluator:
                     exp.contains[i] = self.run(exp.contains[i])
             op_code = exp.contains[0].contains.value
             operand = map(lambda x: x.contains.value, exp.contains[1:])
-            if not operand:
-                raise ValueError(
-                    "Unexpected error during function call: no operands")
             op_func = self.environment.get(op_code)
             if not op_func:
                 raise ValueError(
