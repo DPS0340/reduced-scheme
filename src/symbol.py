@@ -3,6 +3,7 @@ class Symbol:
         self.value = self.parse(value)
 
     def parse(self, value):
+        # from https://norvig.com/lispy.html
         try:
             return int(value)
         except ValueError:
