@@ -5,9 +5,6 @@ class Symbol:
     def parse(self, value):
         # from https://norvig.com/lispy.html
         try:
-            return int(value)
+            return float(value)
         except ValueError:
-            try:
-                return float(value)
-            except ValueError:
-                return value
+            return value
